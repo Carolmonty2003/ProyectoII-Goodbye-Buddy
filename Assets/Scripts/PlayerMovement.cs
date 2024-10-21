@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     //animacion
 
+    public PlayerMovementData NormalProfile;
+    //public PlayerMovementData BigProfile;
+    //public PlayerMovementData LittleProfile;
+
     #region Variables
     public Rigidbody2D RB {  get; private set; }
     public bool IsFacingRight { get; private set; }
@@ -41,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         //animaciones
         //estado en el q comienza
+        _data = NormalProfile;
     }
     void Start()
     {
@@ -220,6 +225,38 @@ public class PlayerMovement : MonoBehaviour
         return IsJumping && RB.velocity.y > 0;
     }
     #endregion
+
+    /*****************************************************/
+    //#region PROFILE METHODS 
+    //NIVEL DE IRA
+    //private void ChangeCurrentProfile()
+    //{
+    //    if (_data == NormalProfile)
+    //        _data = BigProfile;
+    //    else
+    //        _data = NormalProfile;
+    //}
+
+    //public bool IsOnBigElement()
+    //{
+    //    return _data.dataType == DataMovementType.BIG;
+    //}
+
+    //NIVEL DE TRISTEZA
+    //private void ChangeCurrentProfile()
+    //{
+    //    if (_data == NormalProfile)
+    //        _data = LittleProfile;
+    //    else
+    //        _data = NormalProfile;
+    //}
+
+    //public bool IsOnLittleElement()
+    //{
+    //    return _data.dataType == DataMovementType.LITTLE;
+    //}
+    //#endregion
+    /*****************************************************/
 
 
 }

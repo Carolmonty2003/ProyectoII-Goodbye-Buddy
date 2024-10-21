@@ -2,9 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum DataMovementType
+{
+    NORMAL,
+    BIG,
+    LITTLE
+}
+
 [CreateAssetMenu(menuName = "PlayerMoveData")]
 public class PlayerMovementData : ScriptableObject
 {
+    [Header("Data Type")]
+    public DataMovementType dataType;
+
     [Header("Gravity Values")]
     public float gravityStrength;
     public float gravityScale;
